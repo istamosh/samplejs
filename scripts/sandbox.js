@@ -40,5 +40,20 @@ console.log(mail.toUpperCase());
 let nameUpper = userMail.toUpperCase();
 console.log(nameUpper);
 
-// find @ in count letter of mail
-console.log(mail.indexOf('@'));
+// find a letter position number of mail
+console.log(mail.indexOf('i'));
+
+// find last occurence of letter position of mail
+console.log(mail.lastIndexOf('i'));
+
+// slice the mail domain only (hardcode way)
+let sliced = mail.slice(5, 13);
+console.log(sliced);
+
+// substring mail
+let substringed = mail.substring(4, 10);
+console.log(substringed);
+
+// replace first occurence letter of mail
+let replacedLetter = mail.replace('f', '_');
+console.log(replacedLetter);
