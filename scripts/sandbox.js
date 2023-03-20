@@ -54,6 +54,58 @@ console.log(sliced);
 let substringed = mail.substring(4, 10);
 console.log(substringed);
 
-// replace first occurence letter of mail
+// replace first occurence of a letter in mail
 let replacedLetter = mail.replace('f', '_');
 console.log(replacedLetter);
+
+// can calculate area of circle, don't need to declare integer type
+let r = 10;
+const pi = 3.14;
+let circleArea = pi * r**2;
+console.log(circleArea);
+
+// modulo operation
+let remainder = r % 3;
+console.log(remainder);
+
+// remember order of operation - P E M D A S
+let pemdas = 5 / (10-3)**2;
+console.log('pemdas', pemdas);
+
+// shorthand by 1
+let amount = 10;
+amount++;
+console.log('amount++', amount);
+
+// more shorthand notation
+let notation = 10;
+notation /= 2;
+console.log('notation/=2', notation);
+
+// NaN error (not a number)
+let nan = 10;
+console.log('NaN:', nan / 'hello');
+
+// concat several words
+let wordConcat = 'this is ' + 'Istamosh.';
+console.log(wordConcat);
+
+// more concat strings
+const nameMe = 'Istamosh';
+const live = 'Ohio';
+const yearBirth = '1991';
+const title = 'Istamosh Website';
+let concatStrings = 'My name is '+nameMe+' and i live in '+live+' on year '+yearBirth;
+console.log(concatStrings);
+
+// template string concat
+let concatTemplate = `My name is ${nameMe} and i live in ${live} on year ${yearBirth}`;
+
+// creating HTML template
+let htmlTemplate = `
+    <h2>${title}</h2>
+    <p>By ${nameMe}</p>
+    <span>Currently living in ${live} from ${yearBirth}</span>
+`;
+
+console.log(htmlTemplate);
