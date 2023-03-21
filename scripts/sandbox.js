@@ -109,3 +109,14 @@ let htmlTemplate = `
 `;
 
 console.log(htmlTemplate);
+
+// declaring array
+let array = ['creedmoor', 'savage', 'casull'];
+console.log(array);
+
+// accessing value of array
+console.log(array[2]);
+
+// replacing certain value with new one
+array[2] = 'lapua magnum';
+console.log(array[2]);
