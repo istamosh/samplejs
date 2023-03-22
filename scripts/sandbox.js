@@ -111,7 +111,7 @@ let htmlTemplate = `
 console.log(htmlTemplate);
 
 // declaring array
-let array = ['creedmoor', 'savage', 'casull'];
+let array = ['creedmoor', 'savage', 'casull', 'remington', 'ruger', 'marlin', 'british'];
 console.log(array);
 
 // accessing value of array
@@ -120,3 +120,28 @@ console.log(array[2]);
 // replacing certain value with new one
 array[2] = 'lapua magnum';
 console.log(array[2]);
+
+// count the contents of an array
+console.log(array.length);
+
+// array method to join every element as one
+let mergedContent = array.join(', ');
+console.log(mergedContent);
+
+// array indexOf method to know the position inside array
+let indexOfSomething = array.indexOf('marlin');
+console.log(indexOfSomething);
+
+// concat another array after the end of main array
+let anotherArray = ['spencer', 'beowulf'];
+console.log(array.concat(anotherArray));
+
+// push an element inside main array and changes the main array
+let pushing = array.push('nitro');
+console.log(array);
+
+// pop method is removing last one element of an array
+let poppedElement = array.pop();
+console.log(array);
+// and yet you can still retrieve popped element from the said array
+console.log(poppedElement);
