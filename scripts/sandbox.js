@@ -145,3 +145,44 @@ let poppedElement = array.pop();
 console.log(array);
 // and yet you can still retrieve popped element from the said array
 console.log(poppedElement);
+
+// undefined, NaN (Not a Number), template string example
+let blank;
+console.log(blank, blank+3, `this variable is ${blank}.`);
+
+// null value test
+let nullVar = null;
+console.log(nullVar, nullVar+3, `this variable is ${nullVar}.`);
+
+// boolean example and comparison with string version
+console.log(true, false, 'true', 'false');
+
+// includes string method to determine boolean
+let email = 'alfi@istamosh.com';
+let calibers = ['savage', 'nitro', 'steyr'];
+
+let excMark = email.includes('!');
+let caliber = calibers.includes('nitro');
+
+console.log(excMark, caliber);
+
+// more boolean comparator
+let adult = 18;
+
+console.log(adult == 18); // will be true
+console.log(adult != 18); // will be false
+console.log(adult == 20); // will be false
+console.log(adult > 20); // will be false
+console.log(adult < 20); // will be true
+console.log(adult <= 18); // will be true
+console.log(adult >= 19); // will be false
+
+console.log('---------');
+let people = 'istamosh';
+
+console.log(people == 'istamosh'); // will be true since it's matched
+console.log(people == 'Istamosh'); // will be false since it's uppercased
+console.log(people > 'amos'); // will be true since first letter is beyond 'a'
+console.log(people > 'moshimoshi'); // will be false since 'm' is higher than 'i' 
+console.log(people > 'Istamosh'); // will be true since 'i' > 'I' (lowercase is winner here)
+console.log(people > 'Amos') // will be true regardless, same as above
