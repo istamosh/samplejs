@@ -186,3 +186,38 @@ console.log(people > 'amos'); // will be true since first letter is beyond 'a'
 console.log(people > 'moshimoshi'); // will be false since 'm' is higher than 'i' 
 console.log(people > 'Istamosh'); // will be true since 'i' > 'I' (lowercase is winner here)
 console.log(people > 'Amos') // will be true regardless, same as above
+
+// loose comparison (diff. types can still be equal)
+let adultAge2 = 25;
+console.log(adultAge2 == 25); // true
+console.log(adultAge2 == '25'); // true
+console.log(adultAge2 != 25); // false
+console.log(adultAge2 != '25'); // false
+
+// strict comparison (two compared data must be same types)
+console.log(adultAge2 === 25); // true
+console.log(adultAge2 === '25'); // false
+console.log(adultAge2 !== 25); // false
+console.log(adultAge2 !== '25'); // true
+
+// data type conversion
+let someScore = '99';
+// this will append 1 as string at the end
+console.log(someScore + 1); // 991 as str
+// convert again
+someScore = Number(someScore);
+console.log(someScore + 1); // 100 as int
+
+// string conversion and then show its data type
+let fifty = 50;
+fifty = String(fifty);
+console.log(fifty, `as ${typeof fifty} data type.`);
+
+// boolean conversion
+// these all explicit data type conversion, from the above
+console.log(Boolean(fifty)); // will be true
+console.log(Boolean(-19)); // will be true
+console.log(Boolean(0)); // will be false
+console.log(Boolean('0')); // will be true
+console.log(Boolean('')); // will be false
+console.log(Boolean(' ')); // will be true
