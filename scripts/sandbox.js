@@ -221,3 +221,24 @@ console.log(Boolean(0)); // will be false
 console.log(Boolean('0')); // will be true
 console.log(Boolean('')); // will be false
 console.log(Boolean(' ')); // will be true
+
+// loops example
+for(let i = 0; i < 5; i++){
+    console.log('loop counter:', i);
+}
+console.log('loop finished.');
+
+// iterate and count a set of array
+console.log('-------');
+const caliberList = ['.22 LR', '9mm', '.45 ACP'];
+for(let i = 0; i < caliberList.length; i++){
+    console.log(i+1, caliberList[i]);
+}
+
+// cycle/iterate through every array element using HTML template string
+console.log('-------');
+for(let i = 0; i < caliberList.length; i++){
+    let html = `<div>${caliberList[i]}</div>`;
+    console.log(html);
+}
+
