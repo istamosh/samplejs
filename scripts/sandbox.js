@@ -281,3 +281,33 @@ do{
     console.log(caliberList[i]);
     i++;
 } while (i < caliberList.length);
+
+// basic if statement
+const marriedAge = 25;
+
+if(marriedAge > 20){
+    console.log('you are over 20 yo');
+} // log will show aka true
+
+// if statement w/ array length
+const ARs = ['AK47', 'M4', 'AUG', 'G3'];
+
+if(ARs.length > 3){
+    console.log("that's alot of Assault Rifles!");
+} // true
+
+// if check for string length
+const pass = 'p@ssword12345';
+
+// check if password length is 8 or more
+// but first if reaches 12 or more give special feedback
+// if not, give explanation w/ else clause codeblock
+// else clause will prevent multiple/parallel conditions met
+if(pass.length >= 12){
+    console.log('that password is mad strong')
+} else if(pass.length >= 8){
+    console.log('that password is acceptable');
+} else {
+    console.log('password need to be 8 or more characters!');
+}
+
