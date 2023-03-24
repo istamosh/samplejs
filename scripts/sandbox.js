@@ -242,3 +242,42 @@ for(let i = 0; i < caliberList.length; i++){
     console.log(html);
 }
 
+// while loops, is same principle as for loops
+// but prone to infinite loop if not handled inside block
+console.log('-------');
+let i = 0;
+
+while(i < 5){
+    console.log('in loop:', i);
+    i++;
+}
+
+// lets use above caliberList array to iterate those with while loop
+// i is already declared, just reset it to zero again
+console.log('-------');
+i = 0;
+
+while(i < caliberList.length){
+    console.log(caliberList[i]);
+    i++;
+}
+
+// Do While Loop example
+// reset i again
+console.log('-------');
+i = 3;
+
+do{
+    console.log('current value of i is:', i);
+    i++;
+} while (i < 5);
+
+// Do While Loop op. with array
+// exclude first element occurence
+console.log('-------');
+i = 1;
+
+do{
+    console.log(caliberList[i]);
+    i++;
+} while (i < caliberList.length);
