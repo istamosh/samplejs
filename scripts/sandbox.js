@@ -297,12 +297,12 @@ if(ARs.length > 3){
 } // true
 
 // if check for string length
-const pass = 'p@ssword12345';
+let pass = 'p@ssword12345';
 
 // check if password length is 8 or more
 // but first if reaches 12 or more give special feedback
 // if not, give explanation w/ else clause codeblock
-// else clause will prevent multiple/parallel conditions met
+// else clause will prevent multiple/parallel conditions meet
 if(pass.length >= 12){
     console.log('that password is mad strong')
 } else if(pass.length >= 8){
@@ -311,3 +311,91 @@ if(pass.length >= 12){
     console.log('password need to be 8 or more characters!');
 }
 
+// logical operator on if statement
+// || - OR , && - AND
+console.log('-------');
+pass = 'passwordpassword';
+
+if(pass.length >= 12 && pass.includes('.')){
+    console.log('the password is strongest');
+} else if (pass.length >= 8 || pass.includes('.') && pass.length >= 5){
+    console.log('the password is acceptable');
+} else {
+    console.log('password must be at least 8 chars or at least 5 chars with dotted(.) character');
+}
+
+// logical NOT (!)
+let auth = false;
+// NOT as inverted statement
+if(!auth){
+    console.log('you are not authorized yet');
+}
+
+// break and continue statement
+// break from for loop if meet 100 score.
+// ignore current loop iteration when hits zero score and continue
+console.log('-------');
+const scores = [50, 25, 0, 30, 100, 20, 10];
+
+for (let i = 0; i < scores.length; i++){
+    if (scores[i] === 0){
+        continue;
+    } else if (scores[i] === 100){
+        console.log(`shooting score: ${scores[i]}. This John Wick was once top scored! Finished searching.`);
+        break;
+    } else {
+        console.log(`shooting score: ${scores[i]}.`);
+    }
+}
+
+// switch statements
+// using if can be tiresome, so use switch
+// but switch will run the rest of the cases and default if the said case are met
+// to prevent this use break statement for essential cases; unless default
+// the switch statement is using strict comparator i.e. must be same data type (===)
+console.log('-------');
+const grade = 'B';
+
+switch (grade){
+case 'A':
+    console.log('You got an A');
+    break;
+case 'B':
+    console.log('You got a B');
+    break;
+case 'C':
+    console.log('You got a C');
+    break;
+case 'D':
+    console.log('You got a D');
+    break;
+case 'E':
+    console.log('You got an E');
+    break;
+case 'F':
+    console.log('You got a F');
+    break;
+default:
+    console.log('This is incorrect grade');
+}
+
+// variables and block scope
+// can't declare same varname on same scope
+// but can be redeclared inside other (local) scope, even with const var
+console.log('-------');
+const scopedNumber = 30;
+let scopedName;
+
+if(true){
+    // local scope
+    const scopedNumber = 40;
+    let scopedName = 'istamosh';
+    console.log('inside code block:', scopedNumber, scopedName); // result is 40 istamosh
+    if(true){
+        // nested local scope
+        const scopedNumber = 50;
+        console.log('inside nested block:', scopedNumber, scopedName); // result is 50 istamosh
+    }
+}
+// global scope
+console.log('outside code block:', scopedNumber, scopedName); // result is 30 undefined
