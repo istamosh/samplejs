@@ -399,3 +399,101 @@ if(true){
 }
 // global scope
 console.log('outside code block:', scopedNumber, scopedName); // result is 30 undefined
+
+// functions declaration
+// defining the code inside a function, can be called anytime
+
+// run the function
+salute();
+salute();
+salute();
+// below function is hoisted, meaning we can call it even the function is placed on the bottom
+function salute(){
+    console.log('salutations!');
+}
+
+// function expression, CAN'T be hoisted, but good for jumbled code prevention
+const speak = function(){
+    console.log('good day to you!');
+}
+
+speak();
+speak();
+
+// arguments and parameters
+console.log('-------');
+const greet = function(name, time){
+    console.log(`good ${time}, ${name}!`);
+}
+
+// pass the Istamosh value (args) into name params
+greet(); // will contain undefined
+greet('Istamosh', 'morning'); // this is the proper one
+
+// for new liner aesthetic purpose
+function nl(){
+    console.log('-------');
+}
+// another example w/ pre-assigned value
+const greet2 = function(name = 'luigi', time = 'evening'){
+    console.log(`good ${time}, ${name}!`);
+}
+
+greet2(); // declare w/o values
+greet2('mario') // declare w/o 2nd value
+
+// calc. circle area formula (phi*r(2))
+// by calc. given radius from the caller
+// then return the result back to caller
+nl();
+const calcArea = function(radius){
+    return area = 3.14 * radius**2;
+}
+
+const resultArea = calcArea(5);
+console.log('area of circle: '+resultArea);
+
+// arrow/chevron function (modern but same function)
+// only for 1 param
+nl();
+const calcArea2 = radius => 3.14 * radius**2;
+
+const resultArea2 = calcArea2(5);
+console.log('area of circle: '+resultArea2);
+
+// for 2 or more params
+// calc. cylinder volume (phi*r(2)*h)
+nl();
+const cylinderVolume = (radius, height) => {
+    return 3.14 * radius**2 * height;
+}
+
+console.log('volume of cylinder: ' +cylinderVolume(5,8));
+
+// for no parameter function
+nl();
+const formulaCylinderVolume = () => {
+    return `Cylinder Volume is: π r2 h`;
+}
+
+console.log(formulaCylinderVolume());
+
+// simpler no param function
+nl();
+const formulaCircleArea = () => `Circle area is: π r2`;
+
+console.log(formulaCircleArea());
+
+// exercise shopping bill after tax
+nl();
+const bill = (products, tax) => {
+    let total = 0;
+    for (let i = 0; i < products.length; i++){
+        total += products[i] + products[i] * tax;
+    }
+    return total;
+}
+// have a several bills with 10% tax
+let cart = [[10,15,30], 0.1];
+
+console.log(bill(cart[0],cart[1]));
