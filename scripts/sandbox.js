@@ -497,3 +497,103 @@ const bill = (products, tax) => {
 let cart = [[10,15,30], 0.1];
 
 console.log(bill(cart[0],cart[1]));
+
+// methods
+// just as functions with dot (.) notation beforehand
+// method is for variable
+nl();
+let someName = 'istamosh';
+someName = someName.toUpperCase();
+console.log(someName);
+
+// callback function
+// function is an object, can be nested
+// so it can be called by another function as params
+// the order of display is: A B C 50 C D F
+nl();
+const myFunc = (callbackFunc) => {
+    // do something
+    console.log('B');
+    let value = 50;
+    callbackFunc(value);
+    console.log('E');
+}
+console.log('A');
+myFunc(function(val){
+    // do something
+    console.log('C');
+    console.log(val);
+    console.log('D');
+});
+console.log('F');
+
+// modern callback example, same flow as above
+nl();
+const someFunction = (callbackFunc) => {
+    // comes first until hits callbackFunc
+    let score = 75;
+    callbackFunc(score);
+    // comes after callbackFunc (fourth)
+}
+// this line comes firstmost
+someFunction(value => {
+    // comes second
+    console.log(value); // display
+    // comes third
+})
+// this line comes last
+
+// foreach method example
+nl();
+let rifleCaliber = ['5.56mm', '7.62mm', '7.35 Carcano', '.303 British', '.30-06 Springfield', '.300 Rook', '6.5 Arisaka'];
+
+// this method will call 'calibers!' the same time as array total elements
+rifleCaliber.forEach(function(){
+    console.log('calibers!');
+});
+
+// this will call each caliber name (same as for loop)
+nl();
+rifleCaliber.forEach(function(names){
+    console.log('caliber name: '+names);
+});
+
+// arrow format same as above
+// since it's one param, no need a bracket ()
+nl();
+rifleCaliber.forEach(calName => {
+    console.log('caliber name: '+calName);
+})
+
+// arrow format w/ 2 params
+// taking indexes as 2nd params
+// then pass those params into display
+nl();
+console.log('Warehouse ammunition:');
+rifleCaliber.forEach((caliberName, indexNumber) => {
+    console.log(`${indexNumber+1}. ${caliberName} cartridge.`);
+})
+
+// same as above, but with callbackFn
+// it looks nice and simple
+nl();
+const logCartridges = (caliberName, indexNumber) => {
+    console.log(`${indexNumber+1}. ${caliberName} cartridge.`);
+}
+
+console.log('Warehouse ammunition:');
+rifleCaliber.forEach(logCartridges);
+
+// insert a list into HTML
+// declare an empty HTML field, then make templates of every lists
+// append template into .warehouse class in index.html
+// the template HTML can be logged too
+const ul = document.querySelector('.warehouse');
+let html = ``;
+
+rifleCaliber.forEach(names => {
+    html += `<li style="color: darkred">${names}</li>`
+})
+
+console.log(html);
+ul.innerHTML = html;
