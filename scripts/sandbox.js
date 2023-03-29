@@ -597,3 +597,56 @@ rifleCaliber.forEach(names => {
 
 console.log(html);
 ul.innerHTML = html;
+
+// object literal
+// using 'this' keyword to refer an object inside self
+// func. properties inside object CANNOT be arrowed, using arrow func. will prohibit 'this'
+nl();
+let leeEnfield = {
+    name: 'Lee Enfield SMLE Mk.III',
+    mechanism: 'Bolt-action',
+    damage: 70,
+    caliber: '.303 British',
+    magsize: 10,
+    category: 'Rifle',
+    // using objects inside array
+    attachment: [
+        { name: 'bayonet', weight: 0.3 },
+        { name: 'sling', weight: 0.3}
+    ],
+    quickInspect: function(){
+        console.log(`${this.name} is a ${this.mechanism.toLowerCase()} ${this.category.toLowerCase()} that contains ${this.magsize} bullet round(s).`);
+    },
+    inspectCartridge: function(){
+        console.log(`This ${this.category.toLowerCase()} is chambered in ${this.caliber}.`);
+    },
+    // using simplified regular func
+    inspectAttachment(){
+        console.log(`Attachable mod(s):`);
+        this.attachment.forEach(mod => {
+            console.log('+ '+mod.name+', '+mod.weight+' kg');
+        })
+    }
+};
+
+console.log(leeEnfield);
+
+// accessing full name using dot notation
+console.log(leeEnfield.name);
+// access using square bracket notation
+console.log(leeEnfield['magsize']);
+// changing one property
+leeEnfield['category'] = 'Bolt-action rifle';
+console.log(leeEnfield['category']);
+// square bracket notation can be aliased as variable
+const cartridge = 'caliber';
+console.log(leeEnfield[cartridge]);
+// viewing leeEnfield type of object
+console.log(typeof leeEnfield);
+// resetting changed properties
+leeEnfield['category'] = 'Rifle';
+
+// using object methods
+leeEnfield.quickInspect();
+leeEnfield.inspectCartridge();
+leeEnfield.inspectAttachment();
