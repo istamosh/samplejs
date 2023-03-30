@@ -650,3 +650,49 @@ leeEnfield['category'] = 'Rifle';
 leeEnfield.quickInspect();
 leeEnfield.inspectCartridge();
 leeEnfield.inspectAttachment();
+
+// Math object
+// viewing list of math functions
+nl();
+console.log(Math);
+
+// Showing PI and Euler constant
+console.log(Math.PI+'\n'+Math.E);
+
+// Rounding
+nl();
+const someArea = 7.7;
+console.log(Math.round(someArea)); // to nearest or ceil (8)
+console.log(Math.floor(someArea)); // to bottom rounding (7)
+console.log(Math.ceil(someArea)); // to top rounding (8)
+console.log(Math.trunc(someArea)); // truncate decimal (7)
+
+// Random number generator function 1-100
+nl();
+const randomNum = Math.random();
+console.log(randomNum);
+console.log(Math.round(randomNum * 100));
+
+// primitive values
+// stays in data stack (the vars) and particular change won't affect other
+// integer, string is primitive value
+let scoreOne = 50;
+let scoreTwo = scoreOne;
+
+console.log(`scoreOne: ${scoreOne}, scoreTwo: ${scoreTwo}`);
+
+scoreOne = 100;
+console.log(`scoreOne: ${scoreOne}, scoreTwo: ${scoreTwo}`);
+
+// reference values
+// data stays in heap (the values) and any changes in variable would affect other vars
+// array is considered heap value
+// even in const variable it's still can change
+const userOne = { name: 'istamosh', age: 28};
+const userTwo = userOne;
+
+console.log(userOne, userTwo);
+
+userOne.name = 'gigachad';
+
+console.log(userOne, userTwo);
