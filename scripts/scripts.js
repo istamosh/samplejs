@@ -73,7 +73,7 @@ textInsidePTag.innerText += ' istamosh is handsome hehe!';
 // and add sample text for each of it 
 const textsInsidePTag = document.querySelectorAll('p');
 textsInsidePTag.forEach(param => {
-    param.innerText += ' "sample text"';
+    param.innerText += '.';
     console.log(param.innerText)
 });
 
@@ -97,3 +97,73 @@ const warehouseList = document.querySelector('.warehouse');
 rifleCartridge.forEach(content => {
     warehouseList.innerHTML += `<li style="color: darkblue">${content}</li>`;
 });
+
+// fetch href attribute inline from anchor link
+const someLink = document.querySelector('a');
+console.log(someLink.getAttribute('href'));
+// override google link to istamosh github page
+someLink.setAttribute('href', 'https://github.com/istamosh');
+someLink.innerText = 'My Github Page';
+
+// getting class name from P tag
+const lipsum = document.querySelector('.lipsum');
+console.log(lipsum.getAttribute('class'));
+// override attribute name and adding style
+lipsum.setAttribute('lipsum', 'bottomLipsum');
+lipsum.setAttribute('style', 'color: gray;');
+
+// adding style (not override) h1 tag
+// using setAttribute() will overrides it
+// using CSSStyleDeclaration properties allows more style
+const welcomeTitle = document.querySelector('h1');
+// view all moddable properties
+console.log(welcomeTitle.style);
+// adding more title styles
+const titleStyle = welcomeTitle.style;
+titleStyle.margin = '50px';
+titleStyle.color = 'dimgray';
+titleStyle.fontSize = '40px';
+titleStyle.marginBottom = '5px';
+
+// adding/changing class component in DOM
+// showing all possible DOMTokenList
+const dummy = document.querySelector('.dummy');
+console.log(dummy.classList);
+// adding class name from css predefined classes
+// if class name is "dummy", it will become "dummy fail"
+// the pointer will be "div.dummy.fail"
+dummy.classList.add('fail');
+// removing fail
+dummy.classList.remove('fail');
+// adding success class
+dummy.classList.add('success');
+
+// ----- //
+// self challenge: if p text contains error, add fail class, if not, add success class
+const challenge = document.querySelectorAll('.selfChallenge > p');
+challenge.forEach(element => {
+    if (element.innerText.includes('error')){
+        element.classList.add('fail');
+    } else if (element.innerText.includes('success')) {
+        element.classList.add('success');
+    }
+});
+
+// innerText can be hidden by <span> tag,
+// meaning it can bypass if checks like my code above
+// to keep it strict we use textContent property
+challenge.forEach(p => {
+    if(p.textContent.includes('error')){
+        p.classList.add('fail');
+    }
+    if(p.textContent.includes('success')){
+        p.classList.add('success');
+    }
+})
+
+// toggle on/off class name on title area
+// copying from title selector on inspect element
+const titleID = document.querySelector('#page-title');
+titleID.classList.toggle('testclass');
+// coding this again will remove said class
+titleID.classList.toggle('testclass');

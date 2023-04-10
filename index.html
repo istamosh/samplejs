@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <title>Istamosh JS test</title>
 </head>
 <body>
@@ -10,7 +11,7 @@
         alert('hello world!');
     </script> -->
     
-    <h1 id="page-title">Welcome to Istamosh Website</h1>
+    <h1 id="page-title" style="color:saddlebrown">Welcome to Istamosh Website</h1>
 
     <div class="foreword">
         <pre>
@@ -38,6 +39,32 @@ All thanks to Mr. Shaun, YT: TheNetNinja
 
     <div class="error">this is another error message.</div>
 
+    <a href="http://www.google.com">Google Search Engine</a>
+    
+    <p class="lipsum">Lorem Ipsum Dolor Sit Amet Consectetur</p>
+    
+    <div class="dummy">
+        <pre>
+    This is dummy paragraph.
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, ducimus.
+Asperiores dolorem quod vitae nobis, quae officia, odio pariatur id modi
+fugiat repellat in ducimus dolore minima harum voluptatum perferendis!
+        </pre>
+    </div>
+
+    <!-- challenge: if p text contains error, 
+        add fail class, if contain success, 
+        add success class, derived from CSS -->
+    <div class="selfChallenge">
+        <p>lorem error ipsum</p>
+        <p>lorem success ipsum</p>
+        <p>lorem ipsum lorem</p>
+        <p>lorem ipsum success</p>
+        <p>error lorem ipsum</p>
+        <p>lorem ipsum lorem</p>
+        <p>lorem ipsum error</p>
+        <p>success lorem ipsum</p>
+    </div>
     <!-- scripts must be at the bottom to prevent class reference null error -->
     <script src="scripts/sandbox.js"></script>
     <script src="scripts/scripts.js"></script>
